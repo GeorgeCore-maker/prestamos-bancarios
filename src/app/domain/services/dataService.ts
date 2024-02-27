@@ -15,4 +15,8 @@ export class DataService{
   addClient(client: Client): Observable<Client> {
     return this.http.post<Client>(this.baseUrl, client);
   }
+
+  getClients(){
+    return this.http.get(this.baseUrl)
+  }
 }

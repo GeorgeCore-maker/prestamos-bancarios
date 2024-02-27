@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from 'src/app/domain/services/dataService';
 
 @Component({
   selector: 'app-list-clients',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListClientsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dataService:DataService) { }
 
   ngOnInit(): void {
+    this.dataService.getClients().subscribe(response => {
+      console.log(response)
+    }, error => {})
   }
 
 }
