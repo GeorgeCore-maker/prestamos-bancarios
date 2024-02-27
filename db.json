@@ -1,1 +1,23 @@
-{}
+{
+  "clients": [
+    {
+      "name": "Reinaldo andres jaimes",
+      "email": "taasdad@gmail.com",
+      "identification": "11111111",
+      "id": 1
+    },
+    {
+      "name": "Reinaldo andres jaimes",
+      "email": "taasdad@gmail.com",
+      "identification": "11111111",
+      "id": 2
+    },
+    {
+      "name": "Reinaldo andres jaimes",
+      "email": "taasdad@gmail.com",
+      "identification": "11111111",
+      "id": 3
+    }
+  ],
+  "credits": []
+}

@@ -35,13 +35,20 @@ export class AddClientComponent implements OnInit {
       }
 
       this.dataService.addClient(client).subscribe(response =>{
-          alert("Se almaceno correctamente el cliente "+response)
+          alert("Se almaceno correctamente el cliente "+response.name)
+          this.onClear();
       }, error => {
         console.error('Error al enviar el cliente:', error);
       })
     } else {
       console.error('Formulario inválido');
     }
+  }
+
+  private onClear():void{
+    this.userForm.value.name = "";
+    this.userForm.value.email = "";
+    this.userForm.value.identification = "";
   }
 }
 
