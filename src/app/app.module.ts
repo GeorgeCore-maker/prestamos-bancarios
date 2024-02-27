@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './shared/shared.module';
 import { DashboardModule } from './pages/ui/dashboard/dashboard.module';
-import { FormsModule, ReactiveFormsModule, FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -18,10 +18,6 @@ import { FormsModule, ReactiveFormsModule, FormBuilder, FormGroup, Validators, F
     DashboardModule,
     FormsModule,
     ReactiveFormsModule,
-    FormBuilder,
-    FormGroup,
-    Validators,
-    FormControl
   ],
   providers: [],
   bootstrap: [AppComponent],
