@@ -7,7 +7,6 @@ import { SharedModule } from './shared/shared.module';
 import { DashboardModule } from './pages/ui/dashboard/dashboard.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-
 @NgModule({
   declarations: [AppComponent],
   imports: [

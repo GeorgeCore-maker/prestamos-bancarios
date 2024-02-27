@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 import { DashboardRoutingModule } from './dashboard-routing.module';
@@ -21,7 +22,8 @@ import { HeaderComponent } from 'src/app/components/header/header.component';
   imports: [
     CommonModule,
     DashboardRoutingModule,
-    SharedModule
+    SharedModule,
+    ReactiveFormsModule
   ]
 })
 export class DashboardModule { }
