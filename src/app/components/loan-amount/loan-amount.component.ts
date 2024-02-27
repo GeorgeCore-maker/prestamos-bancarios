@@ -16,4 +16,29 @@ export class LoanAmountComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
+  onChangeEvent(event: any){
+    console.log(event.target.value);
+    this.montoSolicitado = event.target.value;
+    let message:String  ="";
+    if(this.montoSolicitado < this.minimo){
+      message = "el monto solicitado es menor al minimo";
+    }
+    
+    if(this.montoSolicitado > this.maximo){
+      message = "el monto solicitado es mayor al maximo";
+    } 
+
+    if(message != ""){
+      alert(message);
+      return;
+    }
+
+    this.saveCredit()
+  }
+
+  private saveCredit(){
+    
+  }
+
 }

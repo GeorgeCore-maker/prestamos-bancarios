@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 import { DashboardRoutingModule } from './dashboard-routing.module';
@@ -10,11 +10,13 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { StartComponent } from '../../../components/start/start.component';
 import { ListClientsComponent } from '../../../components/list-clients/list-clients.component';
 import { HeaderComponent } from 'src/app/components/header/header.component';
+import { LoanAmountComponent } from 'src/app/components/loan-amount/loan-amount.component';
 
 @NgModule({
   declarations: [
     DashboardComponent,
     AddClientComponent,
+    LoanAmountComponent,
     StartComponent,
     HeaderComponent,
     ListClientsComponent
@@ -23,7 +25,8 @@ import { HeaderComponent } from 'src/app/components/header/header.component';
     CommonModule,
     DashboardRoutingModule,
     SharedModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ]
 })
 export class DashboardModule { }

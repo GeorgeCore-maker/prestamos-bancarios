@@ -1,8 +1,10 @@
 <div>
   <h2>Seleccionar monto del préstamo</h2>
+  <mat-form-field>
   <form>
-    <mat-form-field>
-      <input matInput type="number" placeholder="Monto del préstamo" [(ngModel)]="montoSolicitado" min="{{minimo}}" max="{{maximo}}">
-    </mat-form-field>
+  
+      <input matInput type="number" placeholder="Monto del préstamo" [(ngModel)]="montoSolicitado" min="{{minimo}}" max="{{maximo}}" (change)="onChangeEvent($event)">
+
   </form>
+</mat-form-field>
 </div>

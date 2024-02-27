@@ -1,23 +1,24 @@
-<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
-  <div>
-    <label for="name">Nombre:</label>
-    <input type="text" formControlName="name" id="name">
-  </div>
-  <div>
-    <label for="email">Correo:</label>
-    <input type="email" formControlName="email" id="email">
-  </div>
-  <div>
-    <label for="identification">Cédula:</label>
-    <input type="text" formControlName="identification" id="identification">
-  </div>
-  <div>
-    <label for="loanAmount">Monto:</label>
-    <input type="number" formControlName="loanAmount" id="loanAmount">
-  </div>
-  <div formGroupName="loanDetails">
- <!--   <app-loan-amount [parentForm]="userForm"></app-loan-amount> -->
-  </div>
-  <button type="submit">Guardar</button>
-</form> 
+<section>
+  <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="name">Nombre:</label>
+      <input type="text" formControlName="name" id="name">
+    </div>
+    <div>
+      <label for="email">Correo:</label>
+      <input type="email" formControlName="email" id="email">
+    </div>
+    <div>
+      <label for="identification">Cédula:</label>
+      <input type="text" formControlName="identification" id="identification">
+    </div>
+    <div>
+      <label for="loanAmount">Monto:</label>
+      <input type="number" formControlName="loanAmount" id="loanAmount">
+    </div>
+    <app-loan-amount></app-loan-amount>
+    <button type="submit">Guardar</button>
+  </form> 
+</section>
+
 
