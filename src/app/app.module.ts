@@ -6,6 +6,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './shared/shared.module';
 import { DashboardModule } from './pages/ui/dashboard/dashboard.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+HttpClientModule
+
 
 @NgModule({
   declarations: [AppComponent],
@@ -17,6 +20,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     DashboardModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent],

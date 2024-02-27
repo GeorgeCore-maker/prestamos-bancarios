@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormControl } from '@angular/forms';
+import { DataService } from 'src/app/domain/services/dataService';
+import { Client } from 'src/app/domain/models/client';
 
 @Component({
   selector: 'app-add-client',
@@ -8,6 +10,10 @@ import { FormGroup, Validators, FormControl } from '@angular/forms';
 })
 export class AddClientComponent implements OnInit {
   userForm!: FormGroup;
+
+  constructor(private dataService:DataService){
+   
+  }
 
   ngOnInit(): void {
     this.userForm = new FormGroup({
@@ -20,9 +26,19 @@ export class AddClientComponent implements OnInit {
 
 
   onSubmit() {
-    // Lógica para manejar la presentación del formulario aquí
     if (this.userForm.valid) {
-      console.log(this.userForm.value); // Aquí puedes enviar el formulario al servidor u otro proceso
+      console.log(this.userForm.value);
+      const client:Client = {
+        name:this.userForm.value.name,
+        email:this.userForm.value.email,
+        identification:this.userForm.value.identification,
+      }
+
+      this.dataService.addClient(client).subscribe(response =>{
+          alert("Se almaceno correctamente el cliente "+response)
+      }, error => {
+        console.error('Error al enviar el cliente:', error);
+      })
     } else {
       console.error('Formulario inválido');
     }

@@ -1,7 +1,7 @@
-import { User } from "./user";
+import { Client } from "./client";
 
 export interface Credit{
-    user:User,
+    user:Client,
     value:Number,
     dateCredit:Date
 }

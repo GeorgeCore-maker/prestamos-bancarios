@@ -4,6 +4,8 @@ import { AddClientComponent } from 'src/app/components/add-client/add-client.com
 import { LoanAmountModule } from '../loan-amount/loan-amount.module';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [AddClientComponent],
@@ -12,7 +14,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     LoanAmountModule,
     SharedModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClient
   ]
 })
 export class AddClientModule { }
