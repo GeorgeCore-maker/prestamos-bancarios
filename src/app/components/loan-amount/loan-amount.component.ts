@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { DataService } from 'src/app/domain/services/dataService';
 
 @Component({
   selector: 'app-loan-amount',
@@ -6,14 +8,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./loan-amount.component.css']
 })
 export class LoanAmountComponent implements OnInit {
-
-  minimo: number = 100000; // Definir el monto mínimo del préstamo
-  maximo: number = 5000000; // Definir el monto máximo del préstamo
+  amountForm!: FormGroup;
+  minimo: number = this.dataService.minimo; // Definir el monto mínimo del préstamo
+  maximo: number = this.dataService.maximo; // Definir el monto máximo del préstamo
   montoSolicitado: number = 0;
+  
+ // static this: any;
 
-  constructor() { }
+  constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
+    this.amountForm = new FormGroup({
+      loanAmount: new FormControl('',
+        Validators.compose([
+          Validators.required,
+          Validators.min(this.minimo),
+          Validators.max(this.maximo),
+        ])
+      )
+  })
   }
 
 
@@ -24,10 +37,10 @@ export class LoanAmountComponent implements OnInit {
     if(this.montoSolicitado < this.minimo){
       message = "el monto solicitado es menor al minimo";
     }
-    
+
     if(this.montoSolicitado > this.maximo){
       message = "el monto solicitado es mayor al maximo";
-    } 
+    }
 
     if(message != ""){
       alert(message);
@@ -38,7 +51,7 @@ export class LoanAmountComponent implements OnInit {
   }
 
   private saveCredit(){
-    
+
   }
 
 }
