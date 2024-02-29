@@ -19,20 +19,23 @@
 <div class="body">
 
   <div class="ingresar">
-    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
-      <img src="../../../assets/img/usuario.png" alt="" width="30%" height="80%">
+    <form class="" [formGroup]="userForm" (ngSubmit)="onSubmit()">
+      <img src="../../../assets/img/usuario.png" alt="" width="50%">
       <h1 class="h3 mb-3 fw-normal">Agregar Cliente</h1>
       <mat-form-field class="ancho" appearance="fill">
         <mat-label for="name">Nombre</mat-label>
-        <input matInput formControlName="name" id="name">
+        <input matInput formControlName="name" id="name" autocomplete="false">
+        <mat-error *ngIf="userForm.get('name').hasError('required')">El campo es requerido</mat-error>
       </mat-form-field>
       <mat-form-field class="ancho" appearance="fill">
         <mat-label for="email">Correo electrónico</mat-label>
         <input matInput formControlName="email" id="email">
+        <mat-error *ngIf="userForm.get('email').hasError('required')">El campo es requerido</mat-error>
       </mat-form-field>
       <mat-form-field class="ancho" appearance="fill">
         <mat-label for="identification">Cédula</mat-label>
         <input matInput formControlName="identification" id="identification">
+        <mat-error *ngIf="userForm.get('identification').hasError('required')">El campo es requerido</mat-error>
       </mat-form-field>
       <app-loan-amount></app-loan-amount>
       <br>

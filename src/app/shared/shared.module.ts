@@ -8,7 +8,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
-import { MatCardModule }from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
   declarations: [],
@@ -20,7 +21,8 @@ import { MatCardModule }from '@angular/material/card';
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
-    MatCardModule
+    MatCardModule,
+    MatTableModule,
   ],
   exports: [
     MatButtonModule,
@@ -29,7 +31,8 @@ import { MatCardModule }from '@angular/material/card';
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
-    MatCardModule
-  ]
+    MatCardModule,
+    MatTableModule,
+  ],
 })
-export class SharedModule { }
+export class SharedModule {}

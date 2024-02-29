@@ -11,6 +11,7 @@ import { StartComponent } from '../../../components/start/start.component';
 import { ListClientsComponent } from '../../../components/list-clients/list-clients.component';
 import { HeaderComponent } from 'src/app/components/header/header.component';
 import { LoanAmountComponent } from 'src/app/components/loan-amount/loan-amount.component';
+import { TotalAmountComponent } from 'src/app/components/total-amount/total-amount.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { LoanAmountComponent } from 'src/app/components/loan-amount/loan-amount.
     LoanAmountComponent,
     StartComponent,
     HeaderComponent,
-    ListClientsComponent
+    ListClientsComponent,
+    TotalAmountComponent
   ],
   imports: [
     CommonModule,

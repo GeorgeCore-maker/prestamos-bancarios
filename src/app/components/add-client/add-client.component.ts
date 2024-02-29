@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, Validators, FormControl } from '@angular/forms';
+import { FormGroup, Validators, FormControl, FormBuilder } from '@angular/forms';
 import { DataService } from 'src/app/domain/services/dataService';
-import { Client } from 'src/app/domain/models/client';
 
 @Component({
   selector: 'app-add-client',
@@ -13,44 +12,39 @@ export class AddClientComponent implements OnInit {
   minimo: number = this.dataService.minimo; // Definir el monto mínimo del préstamo
   maximo: number = this.dataService.maximo; // Definir el monto máximo del préstamo
 
-  constructor(private dataService: DataService) {}
-
-  ngOnInit(): void {
-    this.userForm = new FormGroup({
-      name: new FormControl('', [Validators.required, Validators.minLength(3)]),
-      email: new FormControl('', [Validators.required, Validators.email]),
-      identification: new FormControl('', Validators.required),
-      /* loanAmount: new FormControl(
-        '',
-        Validators.compose([
-          Validators.required,
-          Validators.min(this.minimo),
-          Validators.max(this.maximo),
-        ])
-      ), */
+  constructor(private formBuilder: FormBuilder, private dataService: DataService) {
+    this.userForm = this.formBuilder.group({
+      name: ['', Validators.required, Validators.minLength(3)],
+      email: ['', [Validators.required, Validators.email]],
+      identification: ['', Validators.required],
     });
   }
 
-  onSubmit() {
-    if (this.userForm.valid) {
-      console.log(this.userForm.value);
-      const client: Client = {
-        name: this.userForm.value.name,
-        email: this.userForm.value.email,
-        identification: this.userForm.value.identification,
-      };
+  ngOnInit(): void {
+/*     this.userForm = new FormGroup({
+      name: new FormControl('', [Validators.required, Validators.minLength(3)]),
+      email: new FormControl('', [Validators.required, Validators.email]),
+      identification: new FormControl('', Validators.required),
+    }); */
+  }
 
-      this.dataService.addClient(client).subscribe(
-        (response) => {
-          alert('Se almaceno correctamente el cliente ' + response.name);
+  onSubmit(): void {
+    if (this.userForm.valid) {
+      const cliente = this.userForm.value;
+      this.dataService.saveClient(cliente).subscribe(
+        response => {
+          console.log('Cliente guardado exitosamente:', response);
+
           this.onClear();
         },
-        (error) => {
-          console.error('Error al enviar el cliente:', error);
+        error => {
+          console.error('Error al guardar el cliente:', error);
+          // Aquí puedes manejar el error, como mostrar un mensaje al usuario
         }
       );
     } else {
-      console.error('Formulario inválido');
+      console.error('El formulario no es válido. Por favor, complete todos los campos correctamente.');
+      // Aquí puedes manejar la validación del formulario, como mostrar un mensaje al usuario
     }
   }
 

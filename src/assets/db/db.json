@@ -1,0 +1,15 @@
+{
+  "clients": [
+    {
+      "name": "Jorge Diaz",
+      "email": "jorge@mail.com",
+      "identification": "1234567890"
+    },
+    {
+      "name": "Janeth Guevara",
+      "email": "janet@mail.com",
+      "identification": "0987654321"
+    }
+  ],
+  "credits": []
+}

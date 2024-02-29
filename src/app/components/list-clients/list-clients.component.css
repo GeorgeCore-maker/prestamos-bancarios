@@ -1,0 +1,25 @@
+.mat-table {
+  width: 100%; /* La tabla ocupará todo el ancho disponible */
+  max-width: 800px; /* Ancho máximo de la tabla */
+}
+
+.mat-column-name {
+  width: 200px; /* Ancho fijo para la columna 'name' */
+  text-align: center;
+}
+
+.mat-column-email {
+  width: 200px; /* Ancho fijo para la columna 'email' */
+  text-align: center;
+}
+
+.mat-column-cedula {
+  width: 200px; /* Ancho fijo para la columna 'cedula' */
+  text-align: center;
+}
+
+.mat-cell {
+  white-space: nowrap; /* Evita que el texto se divida en múltiples líneas */
+  overflow: hidden; /* Oculta el contenido que desborda el tamaño de la celda */
+  text-overflow: ellipsis; /* Muestra puntos suspensivos (...) cuando el contenido desborda */
+}
