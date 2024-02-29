@@ -1,27 +1,19 @@
 # PrestamosBancarios
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.19.
+Este proyecto fue creado con [Angular CLI](https://github.com/angular/angular-cli) versión 11.2.19.
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Ejecutar en la consola `ng serve` para el servidor de desarrollo. Esto lo lleva a la ruta `http://localhost:4200/](http://localhost:4200/dashboard/start)`. La app se recargará cuando haga algún cambio en algún archivo.
 
-## Code scaffolding
+debe ejecutar en la consola el comando `npm run backend`, este comando está configurado para ejecutar el backend de la aplicación.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## modo de ejecución
+IMPORTANTE: para que el programa se ejecute debe estar corriendo la versión 11.2.19 de Angular-cli y la versión 10.13.0 de NodeJS
 
-## Build
+La app esta desarrollada para que automáticamente dirija al usuario al componente Start, allí se puede ver el navbar que tiene los botones respectivos para la navegación y la card donde está el dinero actual del banco, estos 2 componentes están siempre visibles para todas las vistas; se renderiza la tabla de "Clientes Aprobados" que muestra los clientes cuyas solicitudes sean aprobadas aleatoriamente.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+luego está la pestaña para agregar clientes, en donde se podrán registrar nuevos usuarios, allí todos los campos son requeridos y deben estar en el formato adecuado, el monto del préstamo debe estar entre $100000 y $5000000, sino el programa mostrara una advertencia.
 
-## Running unit tests
+por último, la pestaña de lista de clientes, donde se muestran todos los clientes, este o no aprobado el crédito.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
