@@ -37,7 +37,7 @@
         <input matInput formControlName="identification" id="identification">
         <mat-error *ngIf="userForm.get('identification').hasError('required')">El campo es requerido</mat-error>
       </mat-form-field>
-      <app-loan-amount></app-loan-amount>
+      <app-loan-amount (loanFormChanged)="handleLoanFormChange($event)"></app-loan-amount>
       <br>
       <button type="submit" class="ancho" mat-raised-button mat-button color="primary">Guardar</button>
     </form>

@@ -1,1 +1,32 @@
-<p>start works11!</p>
+<div class="contenedor-tabla mt-5">
+  <h1 class="text-center fs-2 fw-semibold">Creditos aprovados</h1>
+  <mat-table [dataSource]="clients" class="mat-elevation-z8">
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef>Name</th>
+      <td mat-cell *matCellDef="let client">{{ client.name }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef>Email</th>
+      <td mat-cell *matCellDef="let client">{{ client.email }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="cedula">
+      <th mat-header-cell *matHeaderCellDef>Cédula</th>
+      <td mat-cell *matCellDef="let client">{{ client.identification }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="fecha">
+      <th mat-header-cell *matHeaderCellDef>Fecha de solicitud</th>
+      <td mat-cell *matCellDef="let client">{{ client.dateCredit }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="monto">
+      <th mat-header-cell *matHeaderCellDef>Monto de solicitud</th>
+      <td mat-cell *matCellDef="let client">{{ client.amount.loanAmount | currency}}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="['name', 'email', 'cedula', 'fecha', 'monto']"></tr>
+    <tr mat-row *matRowDef="let row; columns: ['name', 'email', 'cedula', 'fecha', 'monto']"></tr>
+  </mat-table>
+</div>

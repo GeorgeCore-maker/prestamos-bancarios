@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from 'src/app/domain/services/dataService';
+import { BankService } from 'src/app/domain/services/bank-service';
 
 @Component({
   selector: 'app-total-amount',
@@ -7,24 +7,17 @@ import { DataService } from 'src/app/domain/services/dataService';
   styleUrls: ['./total-amount.component.css']
 })
 export class TotalAmountComponent implements OnInit {
+  totalAmount: number = 0;
 
-  totalAmount: number = this.dataService.total;
-
-  constructor(private dataService: DataService) { }
+  constructor(private bankService: BankService) {}
 
   ngOnInit(): void {
-  }
+    this.bankService.totalAmount$.subscribe(
+      totalAmount => this.totalAmount = totalAmount,
+      error => console.error('Error getting total amount:', error)
+    );
 
-  getTotalAmount(): number {
-    return this.totalAmount;
+    // Actualizar el totalAmount
+    this.bankService.updateTotalAmount();
   }
-
-  approveCredit(amount: number): void {
-    this.totalAmount -= amount;
-  }
-
-  rejectCredit(): void {
-    // Lógica para rechazar un crédito si es necesario
-  }
-
 }

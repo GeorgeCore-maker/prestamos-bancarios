@@ -3,18 +3,8 @@
   max-width: 800px; /* Ancho máximo de la tabla */
 }
 
-.mat-column-name {
+.mat-column-name, .mat-column-email, .mat-column-cedula {
   width: 200px; /* Ancho fijo para la columna 'name' */
-  text-align: center;
-}
-
-.mat-column-email {
-  width: 200px; /* Ancho fijo para la columna 'email' */
-  text-align: center;
-}
-
-.mat-column-cedula {
-  width: 200px; /* Ancho fijo para la columna 'cedula' */
   text-align: center;
 }
 

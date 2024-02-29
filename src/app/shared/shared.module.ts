@@ -10,6 +10,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import { MatTableModule } from '@angular/material/table';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [],
@@ -23,6 +24,7 @@ import { MatTableModule } from '@angular/material/table';
     MatSelectModule,
     MatCardModule,
     MatTableModule,
+    MatSnackBarModule,
   ],
   exports: [
     MatButtonModule,
@@ -33,6 +35,7 @@ import { MatTableModule } from '@angular/material/table';
     MatSelectModule,
     MatCardModule,
     MatTableModule,
+    MatSnackBarModule,
   ],
 })
 export class SharedModule {}

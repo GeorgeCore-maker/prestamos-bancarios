@@ -1,15 +1,92 @@
 {
   "clients": [
     {
-      "name": "Jorge Diaz",
-      "email": "jorge@mail.com",
-      "identification": "1234567890"
+      "name": "andres",
+      "email": "andres@mail.com",
+      "identification": "112233",
+      "dateCredit": "2024-02-29",
+      "approved": false,
+      "amount": {
+        "loanAmount": "1000000"
+      },
+      "id": 1
     },
     {
-      "name": "Janeth Guevara",
-      "email": "janet@mail.com",
-      "identification": "0987654321"
+      "name": "andres hh",
+      "email": "jorge@mail.com",
+      "identification": "123455",
+      "dateCredit": "2024-02-29",
+      "approved": false,
+      "amount": {
+        "loanAmount": "1000000"
+      },
+      "id": 2
+    },
+    {
+      "name": "jorge",
+      "email": "jorge@mail.com",
+      "identification": "99999999",
+      "dateCredit": "2024-02-29",
+      "approved": false,
+      "amount": {
+        "loanAmount": "1000000"
+      },
+      "id": 3
+    },
+    {
+      "name": "martin",
+      "email": "martin@mail.com",
+      "identification": "1234567890",
+      "dateCredit": "2024-02-29",
+      "approved": false,
+      "amount": {
+        "loanAmount": "1000000"
+      },
+      "id": 4
+    },
+    {
+      "name": "sebastian",
+      "email": "sebas@mail.com",
+      "identification": "1234567890",
+      "dateCredit": "2024-02-29",
+      "approved": false,
+      "amount": {
+        "loanAmount": "01000000"
+      },
+      "id": 5
+    },
+    {
+      "name": "martha",
+      "email": "martha@mail.com",
+      "identification": "111111",
+      "dateCredit": "2024-02-29",
+      "approved": true,
+      "amount": {
+        "loanAmount": "01000000"
+      },
+      "id": 6
+    },
+    {
+      "name": "andres",
+      "email": "andres@mail.com",
+      "identification": "111111",
+      "dateCredit": "2024-02-29",
+      "approved": true,
+      "amount": {
+        "loanAmount": "1000000"
+      },
+      "id": 7
+    },
+    {
+      "name": "leidy",
+      "email": "leidy@mail.com",
+      "identification": "555666",
+      "dateCredit": "2024-02-29",
+      "approved": true,
+      "amount": {
+        "loanAmount": "1000000"
+      },
+      "id": 8
     }
-  ],
-  "credits": []
+  ]
 }

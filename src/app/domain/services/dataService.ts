@@ -9,7 +9,6 @@ import { Observable } from 'rxjs';
 export class DataService {
   minimo: number = 100000; // Definir el monto mínimo del préstamo
   maximo: number = 5000000; // Definir el monto máximo del préstamo
-  total: number = 1000000000; //Monto total del banco
 
   private baseUrl = 'http://localhost:3000/clients';
 
@@ -23,7 +22,13 @@ export class DataService {
     return this.http.get<Client[]>(this.baseUrl);
   }
 
-  saveClient(cliente: Client): Observable<Client> {
-    return this.http.post<Client>(this.baseUrl, cliente);
+  saveClient(client: Client): Observable<Client> {
+    console.log(client);
+        // Enviar los datos al servidor JSON
+        return this.http.post<Client>(this.baseUrl, client);
+  }
+
+  getApprovedClients(): Observable<any[]> {
+    return this.http.get<any[]>(this.baseUrl + '?approved=true');
   }
 }
