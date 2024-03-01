@@ -9,9 +9,9 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     CommonModule,
     SharedModule,
-    FormsModule,
-    ReactiveFormsModule,
-    HttpClientModule,
+    // FormsModule,
+    // ReactiveFormsModule,
+    // HttpClientModule,
   ]
 })
 export class AddClientModule { }

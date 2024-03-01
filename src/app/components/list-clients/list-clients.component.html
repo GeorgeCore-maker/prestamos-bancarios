@@ -14,8 +14,16 @@
     <th mat-header-cell *matHeaderCellDef> Cédula </th>
     <td mat-cell *matCellDef="let client"> {{ client.identification }} </td>
   </ng-container>
+  <ng-container matColumnDef="actions">
+    <th mat-header-cell *matHeaderCellDef> Acciones </th>
+    <td mat-cell *matCellDef="let client" style="text-align: center;">
+      <button mat-icon-button color="warn" (click)="onDeleteClient(client.id)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </td>
+  </ng-container>
 
-  <tr mat-header-row *matHeaderRowDef="['name', 'email', 'cedula']"></tr>
-  <tr mat-row *matRowDef="let row; columns: ['name', 'email', 'cedula']"></tr>
+  <tr mat-header-row *matHeaderRowDef="['name', 'email', 'cedula', 'actions']"></tr>
+  <tr mat-row *matRowDef="let row; columns: ['name', 'email', 'cedula', 'actions']"></tr>
 </mat-table>
 </div>

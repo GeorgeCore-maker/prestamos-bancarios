@@ -28,7 +28,12 @@ export class DataService {
         return this.http.post<Client>(this.baseUrl, client);
   }
 
-  getApprovedClients(): Observable<any[]> {
-    return this.http.get<any[]>(this.baseUrl + '?approved=true');
+  getApprovedClients(): Observable<Client[]> {
+    return this.http.get<Client[]>(this.baseUrl + '?approved=true');
+  }
+
+  deleteClient(id: number): Observable<void> {
+    let url = `${this.baseUrl}/${id}`;
+    return this.http.delete<void>(url);
   }
 }

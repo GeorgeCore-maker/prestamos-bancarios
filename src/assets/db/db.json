@@ -45,17 +45,6 @@
       "id": 4
     },
     {
-      "name": "sebastian",
-      "email": "sebas@mail.com",
-      "identification": "1234567890",
-      "dateCredit": "2024-02-29",
-      "approved": false,
-      "amount": {
-        "loanAmount": "01000000"
-      },
-      "id": 5
-    },
-    {
       "name": "martha",
       "email": "martha@mail.com",
       "identification": "111111",
@@ -65,17 +54,6 @@
         "loanAmount": "01000000"
       },
       "id": 6
-    },
-    {
-      "name": "andres",
-      "email": "andres@mail.com",
-      "identification": "111111",
-      "dateCredit": "2024-02-29",
-      "approved": true,
-      "amount": {
-        "loanAmount": "1000000"
-      },
-      "id": 7
     },
     {
       "name": "leidy",
